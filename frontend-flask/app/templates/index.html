@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>MySQL REST api</title>
+
+	<!-- Changing title of Webpage -->
+	<link rel="icon" href="images/twitter_icon.png">
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body class="bg-dark text-white" style="height: 100vh;">
+        <!-- Head Container -->
+		<div class="container-fluid text-white", style="background-color: rgb(102, 26, 32); border-top-color: darkolivegreen; border-top-style: groove;  border-bottom-style: solid; border-bottom-color: grey;">
+			<center><h1><font style="font-family: 'Courier New', Courier, monospace; font-weight: 700; color: greenyellow;">MySQL Database Management</font></h1></center>
+		</div>
+
+        <!-- Main Container -->
+		<div class="container-fluid", style="min-height: 77%; padding: 7%;">
+			<div class="row grid-row justify-content-sm-center">
+				<div class="col">
+					<form action="{{ url_for("home") }}" method="post">
+						<div class="container", style="height: 100%; margin-bottom: 7mm; padding: 7%; margin-bottom: 2%;">
+							<div class="row grid-row">
+								<div class="col-md-5">
+									<select class="form-select form-select-lg mb-3" name="action" style="height: 14mm;">
+										<option value="get">Get</option>
+										<option value="create">Create</option>
+										<option value="update">Update</option>
+										<option value="delete">Delete</option>
+									</select>
+								</div>
+								<div class="col-4">
+									<div class="mb-3">
+										<div class="input-group mb-3">
+											<input type="number" class="form-control"  style="height: 14mm;" name="user_id" placeholder="User ID" onkeypress="return event.charCode >= 48" min="0">
+										</div>
+									</div>
+								</div>
+								<div class="col-1">
+									<button type="submit"  style="height: 14mm; width: 21mm;" class="btn btn-primary">Send</button>
+								</div>
+							</div>
+							<div class="mb-3">
+								<label class="form-label">Content - JSON (application/json)</label>
+								<textarea class="form-control" name="content" rows="11", style="resize: none;" placeholder='{
+	"id": 1,
+	"firstName": "user",
+	"lastName": "user", 
+	"email": "user@gmail.com", 
+	"createdAt": "2021-11-07T21:03:07.000+0000", 
+	"createdBy": "admin",
+	"updatedAt": "2021-03-21T07:11:21.000+0000", 
+	"updatedBy": "admin"
+}
+								  '></textarea>
+							</div>
+						</div>						
+					</form>
+				</div>
+				<div class="col">
+					<div class="container", style="margin-top: 7mm; height: 70%; padding: 7%;">
+						<div class="container text-dark" style="background-color: white; height: 21mm; max-width: 100vh; padding: 1% 0% 0% 2%; overflow: hidden;">
+							<pre><code>
+{{ header }}
+							</code></pre>
+						</div>
+						<div class="container text-dark" style="background-color: white; height: 77mm; display: flex; max-width: 100vh; border-top-style: solid; border-top-color: grey; padding: 1% 0% 0% 2%">
+							<pre><code>
+{{ output }}							
+							</code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Bottom Container -->	  
+		<div class="container-fluid text-white", style="background-color: darkslategrey; border-top-color: darkolivegreen; border-top-style: groove; position: relative; bottom: 0mm;">
+			<center><h3><font style="font-family: 'Courier New', Courier, monospace; font-style: italic;">Backend Powered By: Java Spring Boot MySQL REST API<br><br></font></h1></center>
+		</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
