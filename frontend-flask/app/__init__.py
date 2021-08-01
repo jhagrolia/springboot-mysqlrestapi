@@ -26,7 +26,7 @@ def home():
         elif action == "delete":
             if userid == None:
                 userid = ""
-            response = rq.delete("{0}/api/v1/user/delete/{1}".format(backend_url, userid))
+            response = rq.delete("{0}/api/v1/users/delete/{1}".format(backend_url, userid))
 
         try:
             json_output = pd.json_normalize(response.json())
